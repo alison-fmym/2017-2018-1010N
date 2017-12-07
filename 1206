@@ -1,0 +1,123 @@
+
+
+  // raise arm  for 0.7 sec (in the middle)
+  motorSet(5,-100);
+
+  delay(870);
+
+// pause a bit
+  motorSet(5,-20);
+
+  delay(20);
+
+// stop the arm
+motorSet(5,0);
+
+
+// lift down
+  motorSet(6,127);
+  delay(500);
+  // stop
+  motorSet(6,0);
+
+
+
+//-------------------------
+  // drive forward for 2.35 seconds
+  motorSet(8,127);
+  motorSet(9,127);
+  motorSet(2,-127);
+  motorSet(3,-127);
+  delay(2150);
+
+// stop for 1.5 sec
+  motorSet(9,0);
+  motorSet(8,0);
+  motorSet(2,0);
+  motorSet(3,0);
+  delay(1500);
+
+   // lift back
+   motorSet(6,-127);
+   delay(250);
+   // stop lift
+   motorSet(6,0);
+
+
+
+
+
+
+//--------------------------------------------finish the stack cone process
+// going back for 1.75 seconds
+   motorSet(9,-127);
+   motorSet(8,-127);
+   motorSet(2,127);
+   motorSet(3,127);
+   delay(1750);
+
+// turn for .85 seconds
+   motorSet(9,-127);
+   motorSet(8,-127);
+   motorSet(2,-127);
+   motorSet(3,-127);
+    delay(850);
+
+// go forward a bit for 0.32 seconds
+    motorSet(8,127);
+    motorSet(9,127);
+    motorSet(2,-127);
+    motorSet(3,-127);
+    delay(280);
+
+    // stop
+    motorSet(8,0);
+    motorSet(9,0);
+    motorSet(2,0);
+    motorSet(3,0);
+    delay(300);
+
+
+  // turn
+    motorSet(8,-127);
+    motorSet(9,-127);
+    motorSet(2,-127);
+    motorSet(3,-127);
+     delay(680);
+
+  // drive forwards for 1.3 seconds
+     motorSet(8,127);
+     motorSet(9,127);
+     motorSet(2,-127);
+     motorSet(3,-127);
+     delay(1300);
+
+// drive motors, stop
+    motorSet(6,0);
+    motorSet(7,0);
+    motorSet(2,0);
+    motorSet(3,0);
+
+
+// lift out for 0.5 sec
+
+    motorSet(6,127);
+    delay(500);
+
+// go backward for 1 sec
+    motorSet(8,-127);
+    motorSet(9,-127);
+    motorSet(2,127);
+    motorSet(3,127);
+    delay(1000);
+
+}
+// need to further change test all the arm fuctions
+//12 PT AUTO
+  // keep the claw closed tight
+  // while the potentiometer less than 10, the claw need to be close
+  while(analogRead(POTENTIOMETER_PORT) <10)
+  {
+  motorSet(1,-127);
+  }
+
